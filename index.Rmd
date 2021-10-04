@@ -53,9 +53,9 @@ Aside
 ```{r}
  
 if(PDF_EXPORT){
-  cat("View this CV online with links at _amytrumpower/cv_")
+  cat("View online with links at _amytrumpower/cv_")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/amytrumpower/cv/raw/master/att_cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF](https://github.com/AmyTrumpower/cv/blob/main/att_cv.pdf)")
 }
 ```
 
@@ -64,8 +64,8 @@ Contact {#contact}
 
 
 - <i class="fa fa-envelope"></i> attrumpo@asu.edu
-- <i class="fa fa-github"></i> github.com/amytrumpower
-- <i class="fa fa-phone"></i> (703) 645-7579
+- <i class="fa fa-github"></i> https://github.com/amytrumpower
+- <i class="fa fa-phone"></i> (703)645-7579
 
 
 
@@ -111,7 +111,7 @@ Amy T. Trumpower, PMP {#title}
 
 
 ```{r}
-intro_text <- "My experience is in both private and public sectors in the IT, Telecom, and Construction industries. I have Program & Project Management experience managing high-risk, high-value assets."
+intro_text <- "My experience is in both private and public sectors in IT, Telecom, and Construction industries. I have Program & Project Management experience managing high-risk, high-value assets."
 cat(sanitize_links(intro_text))
 ```
 
@@ -130,7 +130,7 @@ Certifications {data-icon=book}
 --------------------------------------------------------------------------------
 
 ::: aside
-I was the 4th employee in all of the agencies within DHS to earn both FAC/COR Senior Level, and FAC/PM Senior Level. 
+I was the 4th employee in all DHS agencies to earn both FAC/COR Senior Level, and FAC/PM Senior Level. 
 :::
 
 ```{r}
