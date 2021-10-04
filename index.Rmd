@@ -1,0 +1,204 @@
+---
+title: "Amy Trumpower's CV"
+author: Amy Trumpower
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    css: ['css/styles.css', 'resume']
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(glue)
+library(tidyverse)
+
+# Set this to true to have links turned into footnotes at the end of the document
+PDF_EXPORT <- FALSE
+
+# Holds all the links that were inserted for placement at the end
+links <- c()
+
+source('parsing_functions.R')
+
+# Load csv with position info
+position_data <- read_csv('positions.csv')
+```
+
+
+```{r}
+
+if(PDF_EXPORT){
+  cat("
+  <style>
+  :root{
+    --decorator-outer-offset-left: -6.5px;
+  }
+  </style>")
+}
+```
+
+
+Aside
+================================================================================
+
+
+![logo](pmp.jpg){width=50%}
+
+```{r}
+ 
+if(PDF_EXPORT){
+  cat("View this CV online with links at _amytrumpower/cv_")
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/amytrumpower/cv/raw/master/att_cv.pdf)")
+}
+```
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+
+- <i class="fa fa-envelope"></i> attrumpo@asu.edu
+- <i class="fa fa-github"></i> github.com/amytrumpower
+- <i class="fa fa-phone"></i> (703) 645-7579
+
+
+
+Achievements {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+#skills <- tribble(
+ # ~skill,               ~level,
+ # "R",                  5,
+ # "Javascript (d3.js)", 4.5,
+ # "Python",             4,
+ # "Bash",               3.5,
+ # "SQL",                3,
+ # "C++",                3,
+ # "AWK",                3
+#)
+
+#build_skill_bars(skills)
+```
+
+
+
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+
+The source code is available at [github.com/amytrumpower/cv](https://github.com/amytrumpower/cv).
+
+Last updated on `r Sys.Date()`.
+
+
+
+
+Main
+================================================================================
+
+Amy T. Trumpower, PMP {#title}
+--------------------------------------------------------------------------------
+
+
+```{r}
+intro_text <- "My experience is in both private and public sectors in the IT, Telecom, and Construction industries. I have Program & Project Management experience managing high-risk, high-value assets."
+cat(sanitize_links(intro_text))
+```
+
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'education')
+```
+
+
+
+Certifications {data-icon=book}
+--------------------------------------------------------------------------------
+
+::: aside
+I was the 4th employee in all of the agencies within DHS to earn both FAC/COR Senior Level, and FAC/PM Senior Level. 
+:::
+
+```{r}
+print_section(position_data, 'certification')
+```
+
+
+
+Experience {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+::: aside
+
+:::
+
+```{r}
+print_section(position_data, 'industry_positions')
+```
+
+<br>
+<br>
+<br>
+
+Affiliations {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+::: aside
+I am an active member of my affiliations acting as a mentor to jr Program/Project Managers.
+:::
+
+```{r}
+print_section(position_data, 'affiliations')
+```
+
+
+Clearance {data-icon=chart-line}
+--------------------------------------------------------------------------------
+
+
+::: aside
+
+:::
+
+```{r}
+print_section(position_data, 'clearance')
+```
+
+
+
+
+
+
+```{r}
+if(PDF_EXPORT){
+  cat("
+  
+Links {data-icon=link}
+--------------------------------------------------------------------------------
+
+<br>
+
+
+")
+  
+  walk2(links, 1:length(links), function(link, index){
+    print(glue('{index}. {link}'))
+  })
+}
+```
+
+
