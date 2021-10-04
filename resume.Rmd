@@ -47,7 +47,7 @@ Aside
 ================================================================================
 
 
-![logo](beta_dist.png){width=100%}
+![logo](pmp.jpg){width=100%}
 
 Contact {#contact}
 --------------------------------------------------------------------------------
@@ -55,9 +55,7 @@ Contact {#contact}
 
 
 - <i class="fa fa-envelope"></i> attrumpo@asu.edu
-- <i class="fa fa-twitter"></i> NicholasStrayer
 - <i class="fa fa-github"></i> github.com/AmyTrumpower
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
 - <i class="fa fa-phone"></i> (540) 645-7570
 
 
@@ -85,7 +83,7 @@ build_skill_bars(skills)
 Open Source Contributions {#open-source}
 --------------------------------------------------------------------------------
 
-All projects available at `github.com/nstrayer/<name>`
+All projects available at `github.com/amytrumpower/<name>`
 
 
 - `shinysense`: R package to use sensor data in Shiny apps
@@ -118,9 +116,7 @@ Amy T. Trumpower {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
-
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
+intro_text <- "INTROTEXT" 
 "
 
 
